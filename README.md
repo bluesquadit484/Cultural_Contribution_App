@@ -12,6 +12,8 @@ bundle install
 
 bundle exec rake db:migrate
 
+cd appculturalcontribution
+
 Now you can run the server with this command:
 
 rails s -p $PORT -b $IP
