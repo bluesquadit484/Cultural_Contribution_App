@@ -15,6 +15,11 @@
  */
 body {            
     background-color: #480059;
-    font: 90% Arial, Helvetica, sans-serif;        
+    font-family: 'Rubik', sans-serif;       
     color: white;
+}
+input {            
+    font-family: 'Rubik', sans-serif;  
+      padding:5px;
+  font-size:16px;
 }
