@@ -13,13 +13,3 @@
  *= require_tree .
  *= require_self
  */
-body {            
-    background-color: #480059;
-    font-family: 'Rubik', sans-serif;       
-    color: white;
-}
-input {            
-    font-family: 'Rubik', sans-serif;  
-      padding:5px;
-  font-size:16px;
-}
