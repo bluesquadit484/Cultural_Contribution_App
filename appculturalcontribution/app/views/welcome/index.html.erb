@@ -2,49 +2,62 @@
 <html lang="en">
   <head>
     <style>
-        body {
-    margin: 0 auto; 
-    width:600px;
-}
-        main {
-    border:  2px solid white;
-    width:   500px;  
-    margin:  20px;
-    padding: 10px;
-    box-shadow: 0.7px 0.7px 5px purple;
+body {  
+  margin-top: 50px; /*This has gotta stay here to give only this page a gap at the top*/
+} 
+.center {
+  margin: auto;
+  width: 850px;
+  border: 3px solid #F7E400; /*official MNSU gold*/
+  padding: 10px;
+  text-align: center;
 }
 
-label {
-    color: white;
-    float: left;
-    width: 8em;
-    font-weight: bold;
-    text-align: right;}
-input {
-    width: 15em;
-    margin-left: 1em;
-    margin-bottom: .5em;}
-input:focus {
-    border: 2px solid black; }
-#button, #reset {
-    width: 7em;
-    box-shadow: 3px 3px 0 purple; 
-    background-color: silver; }
-#button { margin-left: 9.5em; }
+.btn {
+  border-radius: 5px;
+  padding: 5px 25px;
+  font-size: 15px;
+  text-decoration: none;
+  margin: 7px;
+  color: #FFFFFF;
+  position: relative;
+  display: inline-block;
+}
+
+.btn:active {
+  transform: translate(0px, 5px);
+  -webkit-transform: translate(0px, 5px);
+}
+.purple {
+  background-color: #9b59b6;
+}
+
+.purple:hover {
+  background-color: #B573D0;
+}
+.grey {
+  background-color: #A0A0A0;
+}
+.grey:hover {
+  background-color: #D3D3D3;
+}
 </style>
   </head>
   <body>
   <main>
-<form method="post" action="/addcontact">
-<h2>Welcome to the Cultural Contribution Hours App</h2>
-<h3 align="center">Please Login</h3>
-<label for="username">User Name:</label>
-<input type="text" name="username" id="username"><br>   
-<label for="password">Password:</label>
-<input type="text" name="password" id="password"><br>
-<input type="submit" name="register" id="button" value="Register">
-<input type="reset" name="reset" id="reset"> 
-</form> 
+<div class="center">
+  <%= image_tag "splash.png" %>
+  <h2>Please Log In:</h2>
+  <form method="post" action="/addcontact">
+    <label for="username">User Name:</label><br>
+<input type="text" name="username" id="username"><br><br>  
+<label for="password">Password:</label><br>
+<input type="text" name="password" id="password"><br><br>
+<input type="submit" class="btn purple" name="login" id="button" value="Log In"><br>
+<input type="reset" class="btn grey" name="clear" id="button" value="Clear Form"><br><br><br>
+    </form> 
+</div>
+
 </main>
   </body>
 </html>
