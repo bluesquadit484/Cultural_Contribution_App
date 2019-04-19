@@ -13,3 +13,55 @@
  *= require_tree .
  *= require_self
  */
+
+
+body {            
+    background-color: #480059;
+    font-family: 'Rubik', sans-serif;       
+    color: black;
+    margin-top: 50px; /*This has gotta stay here to give only this page a gap at the top*/
+}
+
+html {
+  overflow-y: scroll;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+  height:100vh;
+}
+
+.center h1 {
+  margin-bottom: 10px;
+}
+
+/* header */
+
+
+#user {
+  float: left;
+  margin-right: 10px;
+  font-size: 2em;
+  color: #000000;
+  letter-spacing: -1px;
+  padding-top: 16px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+#logo:hover {
+  color: #fff;
+  text-decoration: none;
+}
+.btn {
+  padding-top: 13px;
+  padding-bottom: 14px;
+}

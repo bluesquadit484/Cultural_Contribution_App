@@ -1,14 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Appculturalcontribution</title>
+  <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
+  <title>Cultural Contribution App</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-</head>
-<body>
+   <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    
+  </head>
+  <body>
+    <nav class="navbar navbar-fixed-top" style="background-color: #e3f2fd;">
+      <div class="navbar-inner">
+        <div class="container">
 
-<%= yield %>
-
-</body>
+          <p id="user">{@fullName}</p>
+          <nav id="nav_links">
+            <ul class="nav pull-right" id="nav_linkxs">
+              <a href="/static_pages/view_calendar"><button class="btn btn-large btn-success navbar-btn"><i class="icon-list-alt"></i> &nbsp;Calendar</button></a>
+              <a href="/static_pages/student_portal"><button class="btn btn-large btn-info navbar-btn"><i class="icon-user"></i> &nbsp;Account</button></a>
+              <a href="/"><button class="btn btn-large btn-danger navbar-btn"><i class="icon-off"></i> &nbsp;Log Out</button></a>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </nav>
+    </nav>
+    <div class="container">
+      <%= yield %>
+    </div>
+  </body>
 </html>

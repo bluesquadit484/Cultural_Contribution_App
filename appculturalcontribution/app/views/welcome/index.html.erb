@@ -3,8 +3,10 @@
   <head>
     <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
     <style>
+    @import "bootstrap";
     
-    body {            
+    
+body {            
     background-color: #480059;
     font-family: 'Rubik', sans-serif;       
     color: white;
@@ -12,7 +14,7 @@
 }
 input {            
     font-family: 'Rubik', sans-serif;  
-      padding:5px;
+    padding:5px;
   font-size:16px;
 }
 .center {
@@ -57,12 +59,14 @@ input {
 <div class="center">
   <%= image_tag "splash.png" %>
   <h2>Please Log In:</h2>
-  <form method="post" action="/addcontact">
+  <form action="/static_pages/student_portal">
+  <!--<form method="post" action="/static_pages/student_portal">-->
+    <!-- Commenting out the above POST button because we aren't POSTing yet -->
     <label for="username">User Name:</label><br>
 <input type="text" name="username" id="username"><br><br>  
 <label for="password">Password:</label><br>
 <input type="password" name="password" id="password"><br><br>
-<input type="submit" class="btn purple" name="login" id="button" value="Log In"><br>
+<input type="submit" onclick="location.href = '/static_pages/student_portal';" class="btn purple" name="login" id="button" value="Log In"><br>
 <input type="reset" class="btn grey" name="clear" id="button" value="Clear Form"><br><br><br>
     </form> 
 </div>
