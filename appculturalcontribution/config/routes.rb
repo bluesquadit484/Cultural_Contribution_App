@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'static_pages/student_portal'
+
+  get 'static_pages/admin_portal'
+
+  get 'static_pages/view_calendar'
+
+  get 'static_pages/add_event'
+
   get 'welcome/index'
   root 'welcome#index'
 
