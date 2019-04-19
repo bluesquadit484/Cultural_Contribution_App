@@ -8,3 +8,6 @@ $navbarLinkColor:                 #000000 ;
 $navbarSearchPlaceholderColor:    #EEC844 ;
 @import "bootstrap";
 
+.navbar-inner {
+  min-height: 60px;
+}

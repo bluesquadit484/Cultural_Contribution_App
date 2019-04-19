@@ -9,17 +9,19 @@
    <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+    
   </head>
   <body>
     <nav class="navbar navbar-fixed-top" style="background-color: #e3f2fd;">
       <div class="navbar-inner">
         <div class="container">
-          <%= link_to "User", '#', id: "user" %>
-          <nav>
-            <ul class="nav pull-right">
-              <li><%= link_to "User",    '#' %></li>
-              <li><%= link_to "Account",    '#' %></li>
-              <a href="/"><button class="btn btn-danger navbar-btn">Log Out</button></a>
+
+          <p id="user">{@fullName}</p>
+          <nav id="nav_links">
+            <ul class="nav pull-right" id="nav_linkxs">
+              <a href="#"><button class="btn btn-large btn-success navbar-btn"><i class="icon-list-alt"></i> &nbsp;Calendar</button></a>
+              <a href="#"><button class="btn btn-large btn-info navbar-btn"><i class="icon-user"></i> &nbsp;Account</button></a>
+              <a href="/"><button class="btn btn-large btn-danger navbar-btn"><i class="icon-off"></i> &nbsp;Log Out</button></a>
             </ul>
           </nav>
         </div>
