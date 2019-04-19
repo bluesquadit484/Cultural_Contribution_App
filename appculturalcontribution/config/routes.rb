@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :events
   get 'static_pages/student_portal'
 
   get 'static_pages/admin_portal'
