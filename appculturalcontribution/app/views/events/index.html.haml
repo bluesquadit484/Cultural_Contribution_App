@@ -1,0 +1,22 @@
+-#  This file is app/views/events/index.html.haml
+%h1 All Events
+
+%table#events
+  %thead
+    %tr
+      %th Event Description
+      %th Event Date
+      %th Event Location
+      %th Total Hours
+      %th Number of Spots
+      %th Semester
+
+  %tbody
+    - @events.each do |event|
+      %tr
+        %td= event.description 
+        %td= event.date
+        %td= event.location
+        %td= event.total_hours
+        %td= event.number_of_spots
+        %td= event.semester
