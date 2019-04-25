@@ -1,0 +1,13 @@
+<div class="center hero-unit">
+  <h2>Events</h2>
+    <% @events.each do |event| %>
+    <div class="movie">
+      <h3>Date: <%= event.date %></h3>
+      <p>Location: <%= event.location %></p>
+      <p>Start Time: <%= event.start_time %></p>
+      <p>Total Hours: <%= event.total_hrs %></p>
+      <p>Spots: <%= event.spots %></p>
+      <%= link_to "Show Volunteers", event_path(event) %>
+    </div>
+    <% end %>
+</div>

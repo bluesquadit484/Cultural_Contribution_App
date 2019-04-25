@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+
   get 'static_pages/student_portal'
 
   get 'static_pages/admin_portal'
@@ -8,8 +10,15 @@ Rails.application.routes.draw do
   get 'static_pages/add_event'
 
   get 'welcome/index'
-  root 'welcome#index'
-
+  root 'sessions#new'
+  get '/users' => 'users#index'
+  get '/users/:id' => 'users#show', as: :user
+  get '/events' => 'events#index' 
+  get '/events/:id' => 'events#show', as: :event
+  get    '/login',   to: 'sessions#new'
+  post   '/login',   to: 'sessions#create'
+  delete '/logout',  to: 'sessions#destroy'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
