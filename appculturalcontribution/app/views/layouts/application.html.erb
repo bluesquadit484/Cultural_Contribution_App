@@ -15,13 +15,18 @@
     <nav class="navbar navbar-fixed-top" style="background-color: #e3f2fd;">
       <div class="navbar-inner">
         <div class="container">
-
-          <p id="user">{@fullName}</p>
+          <p id="user">
+          <!--<p id="user">Welcome, < DELETE SPACE%= current_user.fname %></p>-->
+          <p id="user">    <% if logged_in? %>
+      Welcome back, <%= current_user.fname %>
+    <% else %>
+      If you're reading this I fucked up
+    <% end %></p>
           <nav id="nav_links">
             <ul class="nav pull-right" id="nav_linkxs">
               <a href="/static_pages/view_calendar"><button class="btn btn-large btn-success navbar-btn"><i class="icon-list-alt"></i> &nbsp;Calendar</button></a>
               <a href="/static_pages/student_portal"><button class="btn btn-large btn-info navbar-btn"><i class="icon-user"></i> &nbsp;Account</button></a>
-              <a href="/"><button class="btn btn-large btn-danger navbar-btn"><i class="icon-off"></i> &nbsp;Log Out</button></a>
+              <a href="/"><button class="btn btn-large btn-danger navbar-btn"><i class="icon-off"></i><%= link_to " Log Out", logout_path, method: :delete %></button></a>
             </ul>
           </nav>
         </div>
