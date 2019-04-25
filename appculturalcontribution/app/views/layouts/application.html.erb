@@ -24,8 +24,13 @@
     <% end %></p>
           <nav id="nav_links">
             <ul class="nav pull-right" id="nav_linkxs">
-              <a href="/static_pages/view_calendar"><button class="btn btn-large btn-success navbar-btn"><i class="icon-list-alt"></i> &nbsp;Calendar</button></a>
-              <a href="/static_pages/student_portal"><button class="btn btn-large btn-info navbar-btn"><i class="icon-user"></i> &nbsp;Account</button></a>
+                  
+    <% if current_user.fname = 's' %>
+      <a href="/events">
+    <% else %>
+      <a href="/users/<%= current_user.id %>"
+    <% end %><button class="btn btn-large btn-success navbar-btn"><i class="icon-list-alt"></i> &nbsp;Calendar</button></a>
+              <a href="/users/<%= current_user.id %>"><button class="btn btn-large btn-info navbar-btn"><i class="icon-user"></i> &nbsp;Account</button></a>
               <a href="/"><button class="btn btn-large btn-danger navbar-btn"><i class="icon-off"></i><%= link_to " Log Out", logout_path, method: :delete %></button></a>
             </ul>
           </nav>
