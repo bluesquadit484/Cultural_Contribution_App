@@ -10,4 +10,9 @@
 <h4>
   This is where you will be able to see your total volunteer hours, and view your upcoming volunteering events
 </h4>
+  <% if current_user.role == 's' %>
+      <h1>You are a student</h1>
+    <% else %>
+      <h1>You are an admin</h1>
+  <% end %>
 </div>

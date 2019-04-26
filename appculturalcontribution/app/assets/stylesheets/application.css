@@ -20,6 +20,7 @@ body {
     font-family: 'Rubik', sans-serif;       
     color: black;
     margin-top: 50px; /*This has gotta stay here to give only this page a gap at the top*/
+    
 }
 
 html {
@@ -64,4 +65,10 @@ textarea {
 .btn {
   padding-top: 13px;
   padding-bottom: 14px;
+}
+.movie {
+  background-color: lightgrey;
+}
+.light {
+  background-color: #EEEEEE;
 }
