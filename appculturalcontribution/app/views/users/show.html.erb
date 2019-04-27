@@ -1,18 +1,22 @@
 <div class="center hero-unit">
-  <h1>Hey, <%= current_user.fname %>! <br>Welcome to your Student Portal</h1><br>
 
-  <h2>
-    This is the Student portal for the Cultural Contribution Scholarship Web Application
-  </h2><br>
-  <h3>
-    You have currently completed {@sumOfHours} out of 25 volunteer hours this semester. <br>You have {@remainingHours} left to complete!
-  </h3><br>
-<h4>
-  This is where you will be able to see your total volunteer hours, and view your upcoming volunteering events
-</h4>
   <% if current_user.role == 's' %>
-      <h1>You are a student</h1>
+      <h1>Hey, <%= current_user.fname %>!</h1><br>
+  <h2>
+    This is the Student portal for the Cultural Contribution Scholarship Web Application<br><br>
+    You're seeing this page because you are a student!
+  </h2><br>
+    <h3>
+    This is where you will see your hours totals for the semester
+  <br><br>
+    Here we can put the events you are signed up for, or have completed</h3>
     <% else %>
-      <h1>You are an admin</h1>
+            <h1>Hey, <%= current_user.fname %>!</h1><br>
+  <h2>
+    This is the Admin portal for the Cultural Contribution Scholarship Web Application<br><br>
+    You're seeing this page because you are an admin!</h2><br>
+    <h3>
+    There's less information on this page than a student, but as an admin you have the ability to create, update and delete events.<br><br>
+    You'll notice that the Calendar link takes you to an admin portal that lets you decide what to do</h3>
   <% end %>
 </div>
