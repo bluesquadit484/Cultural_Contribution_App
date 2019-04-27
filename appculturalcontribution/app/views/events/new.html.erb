@@ -1,26 +1,33 @@
 
 <div class="center hero-unit">
-<h2>Create New Event</h2>
-= form_tag events_path, :method => :post do
+<h2>Create New Event</h2><br>
+<%= form_tag events_path, :method => :post do %>
+<%= label :event, :date, 'Date'%>
+<%= date_select :event, :date %>
 
- = label :event, :date, 'Date'
-  = date_select :event, :date
 
-  = label :event, :location, 'Location'
-  = text_field :event, :location
+  <%= label :event, :location, 'Location'%>
+  <%= text_field :event, :location %>
 
-  = label :event, :start_time, 'Start Time'
-  = text_field :event, :start_time
+  <%= label :event, :start_time, 'Start Time'%>
+  <%= text_field :event, :start_time %>
   
-  = label :event, :total_hrs, 'Total Hours'
-  = text_field :event, :total_hrs
+  <%= label :event, :total_hrs, 'Total Hours'%>
+  <%= text_field :event, :total_hrs %>
   
-  = label :event, :spots, 'Spots'
-  = text_field :event, :spots
+  <%= label :event, :spots, 'Spots'%>
+  <%= text_field :event, :spots %>
   
-  = label :event, :description, 'Description'
-  = text_field :event, :description
+  <%= label :event, :description, 'Description'%>
+  <%= text_field :event, :description %><br>
   
-  = submit_tag 'Save Changes'
+  <%= submit_tag 'Save Changes'%>
+
+
+
+
+
+
+  <% end %>
 
 </div>
