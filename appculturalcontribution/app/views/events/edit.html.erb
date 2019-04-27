@@ -1,10 +1,8 @@
-
 <div class="center hero-unit">
-<h2>Create New Event</h2><br>
+<h2>Edit/Update Event</h2><br>
 <%= form_tag events_path, :method => :post do %>
 <%= label :event, :date, 'Date'%>
 <%= date_select :event, :date %>
-
 
   <%= label :event, :location, 'Location'%>
   <%= text_field :event, :location %>

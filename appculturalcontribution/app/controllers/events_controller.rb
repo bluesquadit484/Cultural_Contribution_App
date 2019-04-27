@@ -12,12 +12,32 @@ class EventsController < ApplicationController
     end 
     def create
     params.require(:event)
-    params[:event].permit(:date,:location,:start_time)
+    params[:event].permit(:date,:location,:start_time, :total_hrs, :spots, :description)
     end
 
     def create
     @event = Event.create!(event_params)
-    flash[:notice] = "#{@event.location} was successfully created."
-    redirect_to event_path
+    flash[:notice] = "#{@event.date} was successfully created."
+    redirect_to events_path
+    end
+
+
+    
+    def update
+    @event = Event.find params[:id]
+    @event.update_attributes!(event_params)
+    flash[:notice] = "#{@event.date} was successfully updated."
+    redirect_to event_path(@event)
+    end
+    
+    def destroy
+    @event = Event.find(params[:id])
+    @event.destroy
+    flash[:notice] = "Event'#{@event.title}' deleted."
+    redirect_to events_path
+    end
+    
+    def event_params
+    params.require(:event).permit(:date,:location,:start_time, :total_hrs, :spots, :description)
     end
 end
