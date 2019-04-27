@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get 'welcome/index'
   root 'sessions#new'
   get '/users' => 'users#index'
+  get '/events/hub' => 'events#hub'
   get '/users/:id' => 'users#show', as: :user
   get '/events' => 'events#index' 
   get '/events/:id' => 'events#show', as: :event
