@@ -1,0 +1,12 @@
+
+<div class="center hero-unit">
+<h2>Create New Event</h2>
+<% form_tag events_path( :method => :post) do %>
+	
+	  <%= label_tag(:date, "Date:") %>
+  <%= text_field_tag(:date) %>
+  <%= submit_tag("Save Changes") %>
+
+<% end %>
+
+</div>

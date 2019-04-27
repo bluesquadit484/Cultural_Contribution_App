@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'static_pages/view_calendar'
 
   get 'static_pages/add_event'
+  get '/events/new' => 'events#new'
 
   get 'welcome/index'
   root 'sessions#new'
