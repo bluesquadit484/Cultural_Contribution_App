@@ -9,6 +9,7 @@
       <p><b>Total Hours:</b> <%= event.total_hrs %></p>
       <p><b>Spots:</b> <%= event.spots %></p>
       <%= link_to "Show the Volunteers", event_path(event) %>
+      <p><%= link_to "Edit/Update", events_edit_path(event) %></p>
     </div>
     <div class="light"><br></div>
     <% end %>
