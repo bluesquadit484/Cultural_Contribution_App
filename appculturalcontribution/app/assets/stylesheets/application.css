@@ -28,13 +28,23 @@ html {
 }
 
 section {
-  overflow: auto;
+  overflow: scroll;
 }
 
 textarea {
   resize: vertical;
 }
-
+.chunky {
+  text-align: center;
+  width: 1000px;
+  margin: auto;
+  background-color: #EEEEEE;
+  margin-top: 0px;
+  padding-top: 15px;
+}
+.hero-unit {
+  height: 100vh;
+}
 .center {
   text-align: center;
   height:100vh;
@@ -71,4 +81,9 @@ textarea {
 }
 .light {
   background-color: #EEEEEE;
+}
+.event_table {
+  background-color: lightgrey;
+  width: 400px;
+    margin: auto;
 }

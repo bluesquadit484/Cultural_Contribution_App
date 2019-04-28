@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'static_pages/add_event'
   get '/events/new' => 'events#new'
   get '/events/edit' => 'events#edit'
+  get '/events/edit/:id' => 'events#edit'
   post '/events', to: 'events#create' 
   get 'welcome/index'
   root 'sessions#new'

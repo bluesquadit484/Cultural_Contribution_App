@@ -1,15 +1,17 @@
-<div class="center hero-unit">
+<div class="chunky">
   <h2>Volunteering Events</h2>
     <% @events.each do |event| %>
-    <div class="movie">
+    <div class="event_table">
       <p><b>Description:</b> <%= event.description %></p>
       <p><b>Date:</b> <%= event.date.strftime("%m/%d/%Y") %> </p>
       <p><b>Location:</b> <%= event.location %></p>
       <p><b>Start Time:</b> <%= event.start_time %></p>
       <p><b>Total Hours:</b> <%= event.total_hrs %></p>
       <p><b>Spots:</b> <%= event.spots %></p>
-      <%= link_to "Show the Volunteers", event_path(event) %>
-      <p><%= link_to "Edit/Update", events_edit_path(event) %></p>
+      <%= link_to "Show the Volunteers", event_path(event) %><br>
+      <%= link_to "Edit/Update", events_edit_path(event) %></p>
+      <a href="/events/edit/<%= event.id %>">DAVID HARDCODED Edit Event</a>
+      
     </div>
     <div class="light"><br></div>
     <% end %>
