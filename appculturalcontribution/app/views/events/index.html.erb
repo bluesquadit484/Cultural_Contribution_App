@@ -8,10 +8,9 @@
       <p><b>Start Time:</b> <%= event.start_time %></p>
       <p><b>Total Hours:</b> <%= event.total_hrs %></p>
       <p><b>Spots:</b> <%= event.spots %></p>
-      <%= link_to "Show the Volunteers", event_path(event) %><br>
-      <%= link_to "Edit/Update", edit_event_path(event) %></p>
-      <a href="/events/edit/<%= event.id %>">DAVID HARDCODED Edit Event</a>
-      
+      <p><%= link_to "Show the Volunteers", event_path(event) %></p>
+      <p><%= link_to "Edit/Update", edit_event_path(event) %></p>
+      <p><%= link_to "Delete Event", event_path(event.id), method: :delete, data: { confirm: "Are you sure?" } %></p>
     </div>
     <div class="light"><br></div>
     <% end %>

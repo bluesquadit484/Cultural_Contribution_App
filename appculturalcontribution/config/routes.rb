@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get '/events/edit' => 'events#edit'
   get 'events/edit/:id', to: 'events#edit', as: 'edit_event'
   post '/events/edit/:id', to: 'events#update'
+  delete '/events/:id', to: 'events#destroy'
   post '/events', to: 'events#create' 
   get 'welcome/index'
   root 'sessions#new'
