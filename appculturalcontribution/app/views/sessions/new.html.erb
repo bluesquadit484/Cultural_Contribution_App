@@ -19,7 +19,7 @@ input {
 }
 .center {
   margin: auto;
-  width: 850px;
+  width: 802px;
   border: 3px solid #F7E400; /*official MNSU gold*/
   padding: 10px;
   text-align: center;
@@ -55,22 +55,32 @@ input {
 </style>
   </head>
   <body>
-  <main>
-<div class="center">
+    <div class="center">
   <%= image_tag "splash.png" %>
-  <h2>Please Log In:</h2>
-  <form action="/static_pages/student_portal">
-  <!--<form method="post" action="/static_pages/student_portal">-->
-    <!-- Commenting out the above POST button because we aren't POSTing yet -->
-    <label for="username">User Name:</label><br>
-<input type="text" name="username" id="username"><br><br>  
-<label for="password">Password:</label><br>
-<input type="password" name="password" id="password"><br><br>
-<input type="submit" onclick="location.href = '/static_pages/student_portal';" class="btn purple" name="login" id="button" value="Log In"><br>
-<input type="reset" class="btn grey" name="clear" id="button" value="Clear Form"><br><br><br>
-    </form> 
-</div>
+  <h2>Please Log In:</h2><br>
 
-</main>
-  </body>
-</html>
+  <main>
+    <% provide(:title, "Log in") %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(:session, url: login_path) do |f| %>
+
+      <%= f.label :email %><br>
+      <%= f.email_field :email, class: 'form-control' %>
+<br><br>
+      <%= f.label :password %><br>
+      <%= f.password_field :password, class: 'form-control' %><br><br>
+
+      <%= f.submit "Log in", class: "btn purple" %>
+    <% end %>
+    
+    <% if logged_in? %>
+      <p>we're in boys</p>
+    <% else %>
+      <p>no-one logged in</p>
+    <% end %>
+            
+
+  </div>
+</div>
+</div>

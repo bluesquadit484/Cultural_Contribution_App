@@ -1,0 +1,23 @@
+<div class="center hero-unit">
+
+  <% if current_user.role == 's' %>
+      <h1>Hey, <%= current_user.fname %>!</h1><br>
+  <h2>
+    This is the Student portal for the Cultural Contribution Scholarship Web Application<br><br>
+    You're seeing this page because you are a student!
+  </h2><br>
+    <h3>
+    This is where you will see your hours totals for the semester
+  <br><br>
+    Here we can put the events you are signed up for, or have completed</h3>
+    <% else %>
+            <h1>Hey, <%= current_user.fname %>!</h1><br>
+  <h2>
+    This is the Admin portal for the Cultural Contribution Scholarship Web Application<br><br>
+    You're seeing this page because you are an admin!</h2><br>
+    <h3>
+    There's less information on this page than a student, but as an admin you have the ability to create, update and delete events.<br><br>
+    You'll notice that the Calendar link takes you to an admin portal that lets you decide what to do</h3>
+  <% end %>
+
+</div>

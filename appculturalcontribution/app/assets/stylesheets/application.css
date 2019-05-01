@@ -13,8 +13,105 @@
  *= require_tree .
  *= require_self
  */
+
+
 body {            
     background-color: #480059;
-    font: 90% Arial, Helvetica, sans-serif;        
-    color: white;
+    font-family: 'Rubik', sans-serif;       
+    color: black;
+    margin-top: 50px; /*This has gotta stay here to give only this page a gap at the top*/
+    
 }
+
+html {
+  overflow-y: scroll;
+}
+
+section {
+  overflow: scroll;
+}
+
+textarea {
+  resize: vertical;
+}
+.chunky {
+  text-align: center;
+  width: 1000px;
+  margin: auto;
+  background-color: #EEEEEE;
+  margin-top: 0px;
+  padding-top: 15px;
+}
+.peeps {
+  text-align: center;
+  width: 1000px;
+  margin: auto;
+  background-color: #EEEEEE;
+  margin-top: 0px;
+  padding-top: 15px;
+    height: 100vh;
+}
+.hero-unit {
+  height: 100vh;
+}
+.center {
+  text-align: center;
+  height:100vh;
+}
+
+.center h1 {
+  margin-bottom: 10px;
+}
+
+/* header */
+
+
+#user {
+  float: left;
+  margin-right: 10px;
+  font-size: 2em;
+  color: #000000;
+  letter-spacing: -1px;
+  padding-top: 16px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+#logo:hover {
+  color: #fff;
+  text-decoration: none;
+}
+.btn-large {
+  padding-top: 13px;
+  padding-bottom: 14px;
+}
+.btn-medium {
+  padding-top: 13px;
+}
+.movie {
+  background-color: lightgrey;
+}
+.light {
+  background-color: #EEEEEE;
+}
+.event_table {
+  background-color: lightgrey;
+  width: 400px;
+    margin: auto;
+}
+a:link
+{
+    color:#FFFFFF;
+}
+
+a:visited
+{
+    color:#FFFFFF;
+}
+
+a:hover 
+{
+    color:#FFFFFF;
+    text-decoration: none;
+}
+

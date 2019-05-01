@@ -1,14 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Appculturalcontribution</title>
+  <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
+  <title>Cultural Contribution App</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+   <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    
+  </head>
+  <body>
+    <nav class="navbar navbar-fixed-top" style="background-color: #e3f2fd;">
+      <div class="navbar-inner">
+        <div class="container">
+          <p id="user">
+          <!--<p id="user">Welcome, < DELETE SPACE%= current_user.fname %></p>-->
+          <p id="user">    <% if logged_in? %>
+      Welcome back, <%= current_user.fname %>
+    <% else %>
+      If you're reading this I fucked up
+    <% end %></p>
+          <nav id="nav_links">
+            <ul class="nav pull-right" id="nav_linkxs">
+                  
+    <% if current_user.role == 's' %>
+      <a href="/events">
+    <% else %>
+      <a href="/events/hub"
+    <% end %><button class="btn btn-large btn-success navbar-btn"><i class="icon-list-alt"></i> &nbsp;Calendar</button></a>
+              <a href="/users/<%= current_user.id %>"><button class="btn btn-large btn-info navbar-btn"><i class="icon-user"></i> &nbsp;Account</button></a>
+              <a href="/"><button class="btn btn-large btn-danger navbar-btn"><i class="icon-off"></i><%= link_to " Log Out", logout_path, method: :delete %></button></a>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </nav>
+    </nav>
+    <div class="chunky">
+      <%= yield %>
+    </div>
+  </body>
 </html>

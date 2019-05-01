@@ -1,0 +1,14 @@
+<div class="peeps">
+  <h2>Volunteers Who have Signed up</h2>
+    <% @users.each do |user| %>
+    <div class="event_table">
+      <%= image_tag "top.png" %>
+      <p>Star ID: <%= user.star_id %></p>
+      <p>First Name: <%= user.fname %></p>
+      <p>Last Name: <%= user.lname %></p>
+      <p>Date of Birth: <%= user.dob.strftime("%m/%d/%Y") %></p>
+      <p>Email: <%= user.email %></p>
+      <%= image_tag "bottom.png" %>
+    </div>
+    <% end %>
+</div>
