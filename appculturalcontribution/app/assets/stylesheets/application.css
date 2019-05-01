@@ -42,6 +42,15 @@ textarea {
   margin-top: 0px;
   padding-top: 15px;
 }
+.peeps {
+  text-align: center;
+  width: 1000px;
+  margin: auto;
+  background-color: #EEEEEE;
+  margin-top: 0px;
+  padding-top: 15px;
+    height: 100vh;
+}
 .hero-unit {
   height: 100vh;
 }
@@ -72,9 +81,12 @@ textarea {
   color: #fff;
   text-decoration: none;
 }
-.btn {
+.btn-large {
   padding-top: 13px;
   padding-bottom: 14px;
+}
+.btn-medium {
+  padding-top: 13px;
 }
 .movie {
   background-color: lightgrey;
@@ -87,3 +99,19 @@ textarea {
   width: 400px;
     margin: auto;
 }
+a:link
+{
+    color:#FFFFFF;
+}
+
+a:visited
+{
+    color:#FFFFFF;
+}
+
+a:hover 
+{
+    color:#FFFFFF;
+    text-decoration: none;
+}
+

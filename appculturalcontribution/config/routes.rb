@@ -6,14 +6,18 @@ Rails.application.routes.draw do
   get 'static_pages/admin_portal'
 
   get 'static_pages/view_calendar'
-
+  get 'events/create' => "events#create"
   get 'static_pages/add_event'
   get '/events/new' => 'events#new'
   get '/events/edit' => 'events#edit'
   get 'events/edit/:id', to: 'events#edit', as: 'edit_event'
   post '/events/edit/:id', to: 'events#update'
   delete '/events/:id', to: 'events#destroy'
+  post '/volunteers/new', to: 'volunteers#new'
   post '/events', to: 'events#create' 
+  post '/volunteers', to: 'volunteers#new' 
+  get '/volunteers/new' => 'volunteers#new'
+  get 'volunteers/show' => 'volunteers#show'
   get 'welcome/index'
   root 'sessions#new'
   get '/users' => 'users#index'
@@ -21,6 +25,7 @@ Rails.application.routes.draw do
   get '/users/:id' => 'users#show', as: :user
   get '/events' => 'events#index' 
   get '/events/:id' => 'events#show', as: :event
+  get '/volunteers' => 'volunteers#index'
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
