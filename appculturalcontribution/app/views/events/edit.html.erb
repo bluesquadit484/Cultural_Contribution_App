@@ -19,7 +19,7 @@
   <%= label :event, :description, 'Description'%>
   <%= text_field :event, :description %><br>
   
-  <%= submit_tag 'Save Changes'%>
+  <%= submit_tag 'Save Changes', data: { confirm: "Are you sure?" }%>
   <% end %>
 
 </div>

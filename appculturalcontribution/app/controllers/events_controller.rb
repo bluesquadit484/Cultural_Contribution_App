@@ -27,9 +27,7 @@ class EventsController < ApplicationController
     def update
     @event = Event.find params[:id]
     @event.update_attributes!(event_params)
-    flash[:notice] = "#{@event.date} was successfully updated."
-    redirect_to events_path
-    #WOULD BE NICE TO HAVE A FLASH MESSAGE HERE
+    redirect_to events_path, notice: 'Event was successfully updated.'
     end
     
     def destroy
