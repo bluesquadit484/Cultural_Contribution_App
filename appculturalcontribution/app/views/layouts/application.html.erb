@@ -18,7 +18,7 @@
           <p id="user">
           <!--<p id="user">Welcome, < DELETE SPACE%= current_user.fname %></p>-->
           <p id="user">    <% if logged_in? %>
-      Welcome back, <%= current_user.fname %>
+      <a id="C4" href="/users/edit/<%= current_user.id %>">Welcome back, <%= current_user.fname %></a>
     <% else %>
       If you're reading this I fucked up
     <% end %></p>

@@ -1,11 +1,23 @@
+  <% join = 0 %>
+  <% total_opp_hrs = Event.sum(:total_hrs) %>
+  <% events = Event.count(:id) %>
+  <% user_id = current_user.id %>
+  <% join = Event.joins(:volunteers).where("volunteers.user_id = user_id") %>
+  <% total_student_hrs = join.sum(:total_hrs) %>
+  <% hrs_left = 25 - total_student_hrs %>
+  <% plzwork = Volunteer.select(:id).joins(:event).where("volunteers.event_id = 1 AND volunteers.user_id = 1") %>
+  
+
 <div class="center hero-unit">
 
   <% if current_user.role == 's' %>
       <h1>Hey, <%= current_user.fname %>!</h1><br>
+      <h1><%= link_to "Profile", event_path(Volunteer.select(:id).joins(:event).where("volunteers.event_id = 1 AND volunteers.user_id = 1")) %></h1><br>
   <h2>
     This is the Student portal for the Cultural Contribution Scholarship Web Application<br><br>
     You're seeing this page because you are a student!
   </h2><br>
+      <h3 id="Green">You are signed up for <%= total_student_hrs %> volunteer hours. <br>You have <%= hrs_left %> hours remaining to volunteer this semester</h1><br><br>
     <h3>
     This is where you will see your hours totals for the semester
   <br><br>
@@ -15,6 +27,7 @@
   <h2>
     This is the Admin portal for the Cultural Contribution Scholarship Web Application<br><br>
     You're seeing this page because you are an admin!</h2><br>
+    <h3 id="Green">There are currently <%= events %> volunteer events open for students, with a total of <%= total_opp_hrs %> hours worth of volunteer opportunities</h1><br><br><br>
     <h3>
     There's less information on this page than a student, but as an admin you have the ability to create, update and delete events.<br><br>
     You'll notice that the Calendar link takes you to an admin portal that lets you decide what to do</h3>

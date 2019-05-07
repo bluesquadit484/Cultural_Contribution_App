@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   get 'static_pages/student_portal'
 
   get 'static_pages/admin_portal'
-
   get 'static_pages/view_calendar'
   get 'events/create' => "events#create"
   get 'static_pages/add_event'
@@ -12,12 +11,16 @@ Rails.application.routes.draw do
   get '/events/edit' => 'events#edit'
   get 'events/edit/:id', to: 'events#edit', as: 'edit_event'
   post '/events/edit/:id', to: 'events#update'
+  get 'users/edit/:id', to: 'users#edit', as: 'edit_user'
+  post '/users/edit/:id', to: 'users#update'
   delete '/events/:id', to: 'events#destroy'
   post '/volunteers/new', to: 'volunteers#new'
   post '/events', to: 'events#create' 
   post '/volunteers', to: 'volunteers#new' 
   get '/volunteers/new' => 'volunteers#new'
   get 'volunteers/show' => 'volunteers#show'
+  get 'volunteers/destroy' => 'volunteers#destroy'
+  post 'volunteers/destroy', to: 'volunteers#destroy'
   get 'welcome/index'
   root 'sessions#new'
   get '/users' => 'users#index'

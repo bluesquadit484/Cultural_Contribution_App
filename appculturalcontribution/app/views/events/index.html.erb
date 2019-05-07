@@ -1,3 +1,5 @@
+  <% user_id = current_user.id %>
+
 <div class="chunky">
   <h2>Volunteering Events</h2><br>
     <% @events.each do |event| %>
@@ -11,6 +13,8 @@
       <p><b>Spots:</b> <%= event.spots %></p><br>
       <% if current_user.role == 's' %>
         <button class="btn btn-primary btn-medium"><p><%= link_to "Sign Up to Volunteer", volunteers_new_path(@volunteer, :event_id=> event.id, :user_id=> current_user.id), :method=> :post, data: { confirm: "Are you sure?" } %></p></button><br><br>
+        <button class="btn btn-danger btn-medium"><p><%= link_to "Unsign Up to Volunteer", volunteers_destroy_path(@volunteer, :event_id=> event.id, :user_id=> current_user.id), :method=> :post, data: { confirm: "Are you sure?" } %></p></button><br><br>
+        <button class="btn btn-success btn-medium"><p><%= link_to "Show all Signed Up Volunteers", event_path(event) %></p></button><br><br>
     <% else %>
       <button class="btn btn-success btn-medium"><p><%= link_to "Show all Signed Up Volunteers", event_path(event) %></p></button><br><br>
       <button class="btn btn-warning btn-medium"><p><%= link_to "Edit/Update", edit_event_path(event) %></p></button>&nbsp&nbsp&nbsp
