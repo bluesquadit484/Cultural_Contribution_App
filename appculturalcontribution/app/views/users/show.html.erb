@@ -12,7 +12,6 @@
 
   <% if current_user.role == 's' %>
       <h1>Hey, <%= current_user.fname %>!</h1><br>
-      <h1><%= link_to "Profile", event_path(Volunteer.select(:id).joins(:event).where("volunteers.event_id = 1 AND volunteers.user_id = 1")) %></h1><br>
   <h2>
     This is the Student portal for the Cultural Contribution Scholarship Web Application<br><br>
     You're seeing this page because you are a student!
